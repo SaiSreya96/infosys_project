@@ -9,7 +9,7 @@ import { useAirQuality } from './hooks/useAirQuality';
 import { getAQICategory, calculateTrend } from './utils/airQuality';
 
 function App() {
-  const [selectedLocation, setSelectedLocation] = useState('San Francisco, CA');
+  const [selectedLocation, setSelectedLocation] = useState('Delhi');
   const { currentReading, predictions, loading, error } = useAirQuality(selectedLocation);
 
   if (loading) {

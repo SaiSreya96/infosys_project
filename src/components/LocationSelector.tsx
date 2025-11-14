@@ -10,14 +10,21 @@ export default function LocationSelector({ location, onLocationChange }: Locatio
   const [isOpen, setIsOpen] = useState(false);
 
   const locations = [
-    'San Francisco, CA',
-    'Los Angeles, CA',
-    'New York, NY',
-    'Chicago, IL',
-    'Houston, TX',
-    'Phoenix, AZ',
-    'Seattle, WA',
-    'Boston, MA'
+    'Delhi',
+    'Mumbai, Maharashtra',
+    'Bangalore, Karnataka',
+    'Hyderabad, Telangana',
+    'Kolkata, West Bengal',
+    'Chennai, Tamil Nadu',
+    'Pune, Maharashtra',
+    'Jaipur, Rajasthan',
+    'Ahmedabad, Gujarat',
+    'Lucknow, Uttar Pradesh',
+    'Chandigarh',
+    'Indore, Madhya Pradesh',
+    'Kochi, Kerala',
+    'Surat, Gujarat',
+    'Visakhapatnam, Andhra Pradesh'
   ];
 
   return (
@@ -37,7 +44,7 @@ export default function LocationSelector({ location, onLocationChange }: Locatio
             className="fixed inset-0 z-10"
             onClick={() => setIsOpen(false)}
           />
-          <div className="absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-20">
+          <div className="absolute right-0 mt-2 w-72 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-20 max-h-96 overflow-y-auto">
             {locations.map((loc) => (
               <button
                 key={loc}
