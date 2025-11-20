@@ -10,21 +10,12 @@ export default function LocationSelector({ location, onLocationChange }: Locatio
   const [isOpen, setIsOpen] = useState(false);
 
   const locations = [
-    'Delhi',
-    'Mumbai, Maharashtra',
-    'Bangalore, Karnataka',
-    'Hyderabad, Telangana',
-    'Kolkata, West Bengal',
-    'Chennai, Tamil Nadu',
-    'Pune, Maharashtra',
-    'Jaipur, Rajasthan',
-    'Ahmedabad, Gujarat',
-    'Lucknow, Uttar Pradesh',
-    'Chandigarh',
-    'Indore, Madhya Pradesh',
-    'Kochi, Kerala',
-    'Surat, Gujarat',
-    'Visakhapatnam, Andhra Pradesh'
+    'North Delhi',
+    'South Delhi',
+    'East Delhi',
+    'West Delhi',
+    'Central Delhi',
+    'New Delhi (NDMC)'
   ];
 
   return (
@@ -44,7 +35,7 @@ export default function LocationSelector({ location, onLocationChange }: Locatio
             className="fixed inset-0 z-10"
             onClick={() => setIsOpen(false)}
           />
-          <div className="absolute right-0 mt-2 w-72 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-20 max-h-96 overflow-y-auto">
+          <div className="absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-20">
             {locations.map((loc) => (
               <button
                 key={loc}

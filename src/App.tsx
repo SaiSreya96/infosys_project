@@ -5,11 +5,12 @@ import LocationSelector from './components/LocationSelector';
 import PollutantBreakdown from './components/PollutantBreakdown';
 import HealthRecommendations from './components/HealthRecommendations';
 import PredictionChart from './components/PredictionChart';
+import RegionInfo from './components/RegionInfo';
 import { useAirQuality } from './hooks/useAirQuality';
 import { getAQICategory, calculateTrend } from './utils/airQuality';
 
 function App() {
-  const [selectedLocation, setSelectedLocation] = useState('Delhi');
+  const [selectedLocation, setSelectedLocation] = useState('North Delhi');
   const { currentReading, predictions, loading, error } = useAirQuality(selectedLocation);
 
   if (loading) {
@@ -59,8 +60,8 @@ function App() {
                 <Wind className="w-8 h-8 text-white" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold text-gray-900">AirAware</h1>
-                <p className="text-sm text-gray-600">Smart Air Quality Prediction System</p>
+                <h1 className="text-3xl font-bold text-gray-900">AirAware Delhi</h1>
+                <p className="text-sm text-gray-600">Delhi Air Quality Monitoring System</p>
               </div>
             </div>
             <LocationSelector
@@ -112,6 +113,10 @@ function App() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           <PollutantBreakdown pollutants={pollutants} />
           <HealthRecommendations category={currentAQI.category} />
+        </div>
+
+        <div className="mb-8">
+          <RegionInfo region={selectedLocation} />
         </div>
 
         <PredictionChart predictions={predictions} currentAQI={currentReading.aqi} />
